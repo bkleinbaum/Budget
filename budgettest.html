@@ -1,0 +1,35 @@
+<!doctype html>
+<meta charset="utf-8">
+
+<!-- load D3js -->
+<script src="//d3plus.org/js/d3.js"></script>
+
+<!-- load D3plus after D3js -->
+<script src="//d3plus.org/js/d3plus.js"></script>
+
+<!-- create container element for visualization -->
+<div id="viz"></div>
+
+<script>
+
+  // sample data array
+  var sample_data = [
+    {"value": 1510972, "name": "DOHMH"},
+    {"value": 830191974, "name": "HHC"},
+    {"value": 9832919214, "name": "HRA"},
+    {"value": 956477899, "name": "DOT"},
+    {"value": 729436037, "name": "HPD"},
+    {"value": 42538094, "name": "DCP"},
+    {"value": 603110346, "name": "DOITT"},
+  ]
+
+  // instantiate d3plus
+  var visualization = d3plus.viz()
+    .container("#viz")  // container DIV to hold the visualization
+    .data(sample_data)  // data to use with the visualization
+    .type("tree_map")   // visualization type
+    .id("name")         // key for which our data is unique on
+    .size("value")      // sizing of blocks
+    .draw()             // finally, draw the visualization!
+
+</script>
